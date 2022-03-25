@@ -52,11 +52,10 @@ It will give real estate agents / investors a visualization of what houses to ke
 
 ## Conclusion and Recommendations
 After fitting my regression models, Linear and LASSO  got the best score and prediction for training and testing on my model.
-Linear regression got an MSE on my trained data of 21,374 and on the tested data 24,580
-Lasso regression got an MSE on my trained data of 21,374 and on the tested data 24,578
-Ridge regression got an MSE on my trained data of 21,465 and on the tested data 24,594
-All 3 of the regression models had very similar R2 scores where al 
-They all were very near each other in their scores and predictions, but I went with the Linear Regression Model to conclude my findings. 
+Linear regression got an MSE on my trained data of 21,374 and on the tested data 24,580.
+Lasso regression got an MSE on my trained data of 21,374 and on the tested data 24,578.
+Ridge regression got an MSE on my trained data of 21,465 and on the tested data 24,594.
+All 3 of the regression models had very similar R2 scores where they all were very near each other in their scores and predictions, but I went with the Linear Regression Model to conclude my findings. 
 
 Aftering scaling and fitting my data into the regression model we can see the coefficients that greatly affect our sale price target. 
 The top 5 features that give the best sale price are: 
