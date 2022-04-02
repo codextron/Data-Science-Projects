@@ -1,55 +1,55 @@
-# ![](https://ga-dash.s3.amazonaws.com/production/assets/logo-9f88ae6c9c3871690e33280fcf557f33.png)  Data Science Venn Diagram
-_Creator: Alexander Combs, NYC_
+# Project 4 Hackathon: Features Constraints
+# Molovi Shuba, Kevin Peng, Kehinde Ajayi
 
--------------------
+## Table of Contents
 
-Today we are going to have a team-based competition. The goal is to create the best performing model on a hold-out sample of data. Simple right?
+- [Executive Summary](#Executive-Summary:)
+- [Problem Statement](#Problem-Statement:)
+- [Goals](#Goals:)
+- [Features](#Features:)
+- [Metrics/Evaluation](#Metrics/Evaluation:)
+- [Recommendations](#Recommendations:)
+- [Citation List](#Citation-List:)
 
-Well, there is a catch.
+## Executive Summary
+As a group of Data Scientists, Molovi Shuba, Kevin Peng, Kehinde Ajayi was tasked to create a predictive model for salary classification above \\$50,000 and less than or equal to \\$50,000 based on numerous different features. The goal is to make the most accurate prediction given the constraint of 20 features or less. To accomplish this task different data science models and procedures will be utilized and tested to create the best model to deploy. The four chosen models were Multinomial Naive Bayes, Logistic Regression, Random Forest, and Decision Tree Classifier. After training and optimizing our parameters, the model that made the best was the Decision Tree Classifier.
 
-This will be a constrained optimization. To understand what that means, let's take a look at the Project Management Venn Diagram, below.
+## Problem Statement: 
+Create the best machine learning model to predict if someone is making less than or greater( and equal to) than 50k. The goal is to optimize as much as possible by taking the best features to put into our models.  The features will be chosen and be discussed on what we see in our EDA. We will also transform data to meet our constraint of fewer than 20 features so that we do not over dummify a column. We will also optimize by having as much data as we can to be used for our models. This means we do not want to remove missing/questionable data but rather predict what it is through model imputation.
 
-![](https://berkonomics.com/wp-content/uploads/2015/11/goodfastcheap1-1.png)
+## Goals:
+Which one is the best machine learning model when you have constraints?
+How well did the models do?
+What was done to optimize our dataset under constraints?
 
-The idea is that for any project you can have any two of these. You can have good work done cheap, but it will take a long time. You can have good work done fast, but it won't be cheap. Or you can have work done fast and on the cheap, but it won't be good.
+## Features
 
-Today we will apply this concept to data science.
+| feature                      	| Data type  	| description                                                                                     	|
+|------------------------------	|------------	|-------------------------------------------------------------------------------------------------	|
+| capital-gain                 	| continuous 	| capital gains for an individual                                                                 	|
+| hours-per-week               	| continuous 	| the hours an individual has reported to work per week                                           	|
+| age                          	| discrete   	| age of an individual                                                                            	|
+| capital-loss                 	| continuous 	| capital loss for an individual                                                                  	|
+| education-num                	| discrete   	| the highest level of education achieved in numerical form                                       	|
+| sex_Male                     	| discrete   	| biological sex of the individual is Male                                                        	|
+| marital-status_group_Married 	| discrete   	| marital status of an individual is Married-civ-spouse, Married-spouse-absent, Married-AF-spouse 	|
+| occupation_Exec-managerial   	| binary     	| the general type of occupation of an individual is Exec-managerial                              	|
+| occupation_Prof-specialty    	| binary     	| the general type of occupation of an individual is Prof-specialty                               	|
+| occupation_Other-service     	| binary     	| the general type of occupation of an individual is Other-service                                	|
+| relationship_Husband         	| binary     	| this individual is someone's Husband                                                            	|
+| relationship_Own-child       	| binary     	| this individual is "Own-child" (?)                                                              	|
+| relationship_Not-in-family   	| binary     	| this individual is not in anyone's family                                                       	|
+| relationship_Unmarried       	| binary     	| this individual is Unmarried                                                                    	|
 
-You will be given a dataset and teams will be randomly assigned to one constraint: samples, features or algorithm.
+## Metrics/Evaluation: Baseline Score: 75%  
 
----
+|Model|Train Score|Test Score
+|---|---|---|
+Multinomial Naive Bayes|0.82|0.82|
+Logistic Regression|0.84|0.84|
+Random Forest|0.85|0.85|
+Decision Tree Classifier|0.86|0.85|
 
-### Team Sample Constraint
-- Your choice of algorithm
-- Your choice of features
-- **Must use the cheap train sample**
+## Recommendations:
 
-### Team Features Constraint
-- Your choice of algorithm
-- **Limited to a maximum of 20 features**
-- Your choice of samples
-
-### Team Algorithm Constraint
-- **Must use a Random Forest**
-- Your choice of features
-- Your choice of samples
-
-## Deliverables
-Your team will have until 4:30pm EST / 1:30pm PST (presentation time) to build the best model possible under those constraints.
-
-- Modeling, predictions csv, and slide deck done by 4:30pm EST / 1:30pm PST (presentation time)
-- Group presentations (_5 min, semi-technical audience_) with slide deck between 4:30 - 5:30pm EST / 1:30 - 2:30pm PST (presentation time)
-- Repo with organized notebooks and README.md due by 11:59 pm EST / 8:59pm PST
-
-# ![](https://media.giphy.com/media/aL4bDxt8fbpy8/giphy.gif)
-
- Descriptions of the data can be found [here](https://archive.ics.uci.edu/ml/datasets/adult).
-
-### Submission
----
-
-The task is to predict if a person's income is in excess of \$50,000 given certain profile information, and more specifically to generate the labels for income being **above** \$50,000 for each row in the test set. This will simply be a _**csv called `group#-group-submission.csv`, for example `1-group-submission.csv`**_, with a single column of the predictions [0,1].
-
-One member from each group will Slack the csv with your predictions to Noah by 4:30pm EST / 1:30pm PST. Only one member from each group should submit the link to your GitHub repository to Google Classroom with final changes made by 11:59am EST / 8:59pm PST.
-
-Good luck!
+With a training accuracy score of 86% and testing accuracy score of 85, the model that performed the best is the Decision Tree Classifier and would make the best predictions. Something to note was that 
