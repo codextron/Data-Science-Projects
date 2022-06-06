@@ -1,2 +1,2 @@
 Checkout the main link to the project:
-https://github.com/kev-peng/The-East-West-Alliance
+[News App Classifier Github](https://github.com/kev-peng/The-East-West-Alliance)
